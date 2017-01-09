@@ -2,7 +2,7 @@
   <html>
     <head>
       <meta charset="utf-8">
-      <title>Garntante Theme</title>
+      <title>Garntante Hamburg</title>
       <?php wp_head(); ?>
     </head>
 
