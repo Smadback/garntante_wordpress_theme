@@ -11,16 +11,16 @@
     <div class="rslides_container">
         <ul id="rslides_index" class="rslides">
             <li>
-                <img class="responsive-img" alt="Geschäft von innen" src="<?php echo DIR_IMAGES ?>slider1.jpg">
+                <img class="responsive-img" alt="Geschäft von innen" src="/includes/images/slider1.jpg">
             </li>
             <li>
-                <img class="responsive-img" alt="Wolle" src="<?php echo DIR_IMAGES ?>slider2.jpg">
+                <img class="responsive-img" alt="Wolle" src="/includes/images/slider2.jpg">
             </li>
             <li>
-                <img class="responsive-img" alt="Schaufenster" src="<?php echo DIR_IMAGES ?>slider3.jpg">
+                <img class="responsive-img" alt="Schaufenster" src="/includes/images/slider3.jpg">
             </li>
             <li>
-                <img class="responsive-img" alt="Wolle" src="<?php echo DIR_IMAGES ?>slider4.jpg">
+                <img class="responsive-img" alt="Wolle" src="/includes/images/slider4.jpg">
             </li>
         </ul>
     </div>
