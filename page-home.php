@@ -30,7 +30,7 @@
         <div class="row">
             <div class="section">
                 <div class="col s12 light">
-                    <h2 class="text_h2"><blockquote>Aktuelles</blockquote></h2>
+                    <h2><blockquote>Aktuelles</blockquote></h2>
                 </div>
 
                 <div class="col s12 light">
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="col s12">
-                    <h2 class="text_h2">
+                    <h2>
                         <blockquote>Willkommen in der Garntante</blockquote>
                     </h2>
 

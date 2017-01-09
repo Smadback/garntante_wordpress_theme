@@ -17,7 +17,7 @@
           <div class="row">
               <div class="col s12">
 
-                  <h4 class="text_h2 center">Januar '17</h4>
+                  <h4 class="center">Januar '17</h4>
                   <ul class="collapsible popout" data-collapsible="accordion">
                     <li>
                       <div class="collapsible-header"><i class="material-icons">group</i>Stricktreff am Dienstag</div>
@@ -43,7 +43,7 @@
                   </li>
                   </ul>
 
-                  <h4 class="text_h2 center">Februar '17</h4>
+                  <h4 class="center">Februar '17</h4>
                   <ul class="collapsible popout" data-collapsible="accordion">
                     <li>
                       <div class="collapsible-header"><i class="material-icons">group</i>Stricktreff am Dienstag</div>
@@ -69,7 +69,7 @@
                   </li>
                   </ul>
 
-                  <h4 class="text_h2 center">März '17</h4>
+                  <h4 class="center">März '17</h4>
                   <ul class="collapsible popout" data-collapsible="accordion">
                     <li>
                       <div class="collapsible-header"><i class="material-icons">group</i>Stricktreff am Dienstag</div>

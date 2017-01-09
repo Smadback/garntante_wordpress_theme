@@ -92,6 +92,5 @@
 </main>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAZnaZBXLqNBRXjd-82km_NO7GUItyKek&callback=initMap"></script>
-<script src="<?php echo DIR_JSCRIPT ?>googlemaps.js"></script>
 
 <?php get_footer(); ?>

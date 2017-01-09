@@ -9,7 +9,7 @@
   <body <?php body_class(); ?>>
 <nav>
   <div class="nav-wrapper container ">
-    <a href="<?php echo get_home_url(); ?>" class="brand-logo black-text">Brand Icon</a>
+    <a href="<?php echo get_home_url(); ?>" class="brand-logo">Brand Icon</a>
     <a href="#" data-activates="mobile-demo" class="button-collapse black-text"><i class="material-icons">menu</i></a>
 
     <?php

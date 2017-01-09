@@ -3,16 +3,16 @@
 /* */
 function garntante_script_enqueue() {
   /* CSS */
-  wp_enqueue_style('materialize', get_template_directory_uri() . '/css/materialize.min.css', array(), '0.97.5', 'all');
+  wp_enqueue_style('materialize', get_template_directory_uri() . '/css/materialize.min.css', array(), '0.97.8', 'all');
   wp_enqueue_style('responsiveslides', get_template_directory_uri() . '/css/responsiveslides.min.css', array(), '1.5.4', 'all');
   wp_enqueue_style('material-icons', 'http://fonts.googleapis.com/icon?family=Material+Icons', array(), '1.5.4', 'all');
   wp_enqueue_style('roboto-font', 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700', array(), '1.5.4', 'all');
-  wp_enqueue_style('garntante', get_template_directory_uri() . '/css/garntante.css', array(), '1.0.0', 'all');
+  wp_enqueue_style('garntante', get_template_directory_uri() . '/css/custom.css', array(), '1.0.0', 'all');
 
   /* Javascript */
   wp_enqueue_script('jquery');
   wp_enqueue_script('init', get_template_directory_uri(). '/js/init.js', array(), '1.0.0', true);
-  wp_enqueue_script('materialize', get_template_directory_uri(). '/js/materialize.min.js', array(), '0.97.5', true);
+  wp_enqueue_script('materialize', get_template_directory_uri(). '/js/materialize.min.js', array(), '0.97.8', true);
   wp_enqueue_script('responsiveslides', get_template_directory_uri(). '/js/responsiveslides.min.js', array(), '1.54', true);
   wp_enqueue_script('googlemaps', get_template_directory_uri(). '/js/googlemaps.js', array(), '1.0.0', true);
   wp_enqueue_script('garntante', get_template_directory_uri(). '/js/garntante.js', array(), '1.0.0', true);
