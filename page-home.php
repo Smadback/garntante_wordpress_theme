@@ -41,7 +41,7 @@
                                 Leider m&uuml;ssen wir den Stricktreff vom 17.01. um 2 Wochen nach hinten verschieben und
                                 freuen uns am 31. Januar auf Euren Besuch!<br>
                                 <br>
-                                Eure Garntante
+                                Euer Team der Garntante
                             </p>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                                 Außerdem wird es bald einen von uns betriebenen Blog geben, in dem wir Euch über aktuelle Strickprojekte und Neues rund um die Garntante auf dem Laufen halten werden.<br>
                                 <br>
                                 Wir freuen uns schon darauf, <br>
-                                eure Garntante
+                                euer Team der Garntante
                             </p>
                         </div>
                     </div>
