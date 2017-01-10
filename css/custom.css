@@ -114,6 +114,10 @@ h5 {
     margin-bottom: 30px;
 }
 
+.neuigkeit-content {
+    font-size: 20px;
+}
+
 /**************************
   I N P U T F E L D E R
 ***************************/
@@ -138,4 +142,12 @@ h5 {
 .input-field textarea.materialize-textarea:focus {
     border-bottom: 1px solid #D2615F;
     box-shadow: 0 1px 0 0 #D2615F;
+}
+
+/**************************
+    S O N S T I G E S
+***************************/
+
+.chip {
+  margin-top: 10px;
 }

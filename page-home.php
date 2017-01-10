@@ -2,6 +2,13 @@
 /*
   Template Name: Startseite
 */
+
+/* Prepare the WP_Query for the News CPT */
+$neuigkeit_query_args = array(
+    'post_type'         => 'neuigkeit',
+    'post_status'       => 'publish'
+);
+$neuigkeit_query = new WP_Query($neuigkeit_query_args);
 ?>
 
 <?php get_header(); ?>
@@ -33,35 +40,21 @@
                     <h2><blockquote>Aktuelles</blockquote></h2>
                 </div>
 
-                <div class="col s12 light">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title"><b>STRICKTREFF VOM 17.01. VERSCHOBEN</b></span>
-                            <p style="font-size: 20px">
-                                Leider m&uuml;ssen wir den Stricktreff vom 17.01. um 2 Wochen nach hinten verschieben und
-                                freuen uns am 31. Januar auf Euren Besuch!<br>
-                                <br>
-                                Euer Team der Garntante
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 light">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title"><b>Blog und Online Shop in arbeit</b></span>
-                            <p style="font-size: 20px">
-                                Damit Ihr auch bequem von Zuhause aus die Wolle für euer nächstes Projekt einkaufen könnt arbeiten wir daran euch
-                                in näherer Zeit einen Online Shop zur Verfügung zu stellen, den Ihr über den Reiter 'Online Shop' in der Navigationsleiste erreichen könnt.<br>
-                                Außerdem wird es bald einen von uns betriebenen Blog geben, in dem wir Euch über aktuelle Strickprojekte und Neues rund um die Garntante auf dem Laufen halten werden.<br>
-                                <br>
-                                Wir freuen uns schon darauf, <br>
-                                euer Team der Garntante
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <?php while($neuigkeit_query->have_posts()): $neuigkeit_query->the_post();
+                if (get_post_meta(get_the_id(), 'neuigkeit_anzeigen', true) == true): ?>
+                  <div class="col s12 light">
+                      <div class="card">
+                          <div class="card-content">
+                              <span class="card-title"><b><?= the_title(); ?></b></span>
+                              <div class="neuigkeit-content"><?= the_content(); ?></div>
+                              <div class="chip">verfasst am <?= get_the_date(); ?></div>
+                          </div>
+                      </div>
+                  </div>
+                <?php
+                endif;
+                endwhile;
+                ?>
 
                 <div class="col s12">
                     <h2>

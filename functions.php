@@ -28,5 +28,10 @@ function garntante_theme_setup() {
   register_nav_menu('header_nav', 'Navigationsleiste');
   register_nav_menu('mobile_nav', 'Navigation für Mobilgeräte');
   register_nav_menu('footer_nav', 'Fußzeile');
+
 }
 add_action('init', 'garntante_theme_setup');
+
+/* Require the files for News Custom Post Type */
+require_once (plugin_dir_path(__FILE__) . '/garntante-news/garntante-news-cpt.php');
+require_once (plugin_dir_path(__FILE__) . '/garntante-news/garntante-news-fields.php');
