@@ -34,12 +34,30 @@
                 </div>
 
                 <div class="col s12 light">
-                    <div class="card" id="socken-strickkurs">
+                    <div class="card">
                         <div class="card-content">
                             <span class="card-title"><b>STRICKTREFF VOM 17.01. VERSCHOBEN</b></span>
                             <p style="font-size: 20px">
                                 Leider m&uuml;ssen wir den Stricktreff vom 17.01. um 2 Wochen nach hinten verschieben und
-                                freuen uns am 31. Januar auf Euren Besuch!
+                                freuen uns am 31. Januar auf Euren Besuch!<br>
+                                <br>
+                                Eure Garntante
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 light">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title"><b>Blog und Online Shop in arbeit</b></span>
+                            <p style="font-size: 20px">
+                                Damit Ihr auch bequem von Zuhause aus die Wolle für euer nächstes Projekt einkaufen könnt arbeiten wir daran euch
+                                in näherer Zeit einen Online Shop zur Verfügung zu stellen, den Ihr über den Reiter 'Online Shop' in der Navigationsleiste erreichen könnt.<br>
+                                Außerdem wird es bald einen von uns betriebenen Blog geben, in dem wir Euch über aktuelle Strickprojekte und Neues rund um die Garntante auf dem Laufen halten werden.<br>
+                                <br>
+                                Wir freuen uns schon darauf, <br>
+                                eure Garntante
                             </p>
                         </div>
                     </div>
