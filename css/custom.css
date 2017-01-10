@@ -99,6 +99,10 @@ h2, h3, h4 {
     font-weight: 100;
 }
 
+h5 {
+  font-weight: 90;
+}
+
 .caption-title {
     font-size: 2rem;
     font-weight: 300;
