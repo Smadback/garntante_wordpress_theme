@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $human = $_POST['message_human'];
 
   //php mailer variables
-  $to = 'smadback@gmail.com';
+  $to = 'kontakt@garntante.de';
   $subject = 'Kontakt per Webseitenformular';
   $timestamp = time();
   $tag = date("d.m.y", $timestamp);
