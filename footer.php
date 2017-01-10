@@ -17,7 +17,7 @@
 
                 <div class="col m4 s12 white-text">
                     <h5 class="caption-title">Soziale Netze</h5>
-                    <a href="https://www.facebook.com/Garntante/" style="color:white" target="_blank"><img src="/includes/images/facebook.png"></a>
+                    <a href="https://www.facebook.com/Garntante/" style="color:white" target="_blank"><img src="<?= get_template_directory_uri(); ?>/images/facebook.png"></a>
                 </div>
 
             </div>

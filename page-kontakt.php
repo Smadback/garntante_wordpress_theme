@@ -2,13 +2,115 @@
 /*
   Template Name: Kontakt
 */
+
+// $senden = null;
+//
+// if (!empty(filter_input_array(INPUT_POST))) {
+//     $zieladresse = 'smadback@gmail.com';
+//     $name = filter_input(INPUT_POST, 'name');
+//     $email = filter_input(INPUT_POST, 'email');
+//     $nachricht = filter_input(INPUT_POST, 'nachricht');
+//     $betreff = 'Kontakt per Webseitenformular';
+//     $timestamp = time();
+//     $tag = date("d.m.y", $timestamp);
+//     $uhrzeit = date("H:i", $timestamp);
+//     $header = array(
+//       'From' . $name . ' <' . $email . '>',
+//       'Content-Type: text/html; charset=UTF-8'
+//     );
+//
+//     if (filter_input(INPUT_POST, 'telefon') === "") {
+//         $telefon = "Keine Telefonnumer angegeben.";
+//     } else {
+//         $telefon = filter_input(INPUT_POST, 'telefon');
+//     }
+//
+//     $inhalt = 'Sendedatum: ' . $tag . ' - ' . $uhrzeit . '<br><br>' .
+//         '<b>Absender</b>: <br>' .
+//         '<b>Name</b>: ' . $name . '<br>' .
+//         '<b>E-Mail</b>: ' . $email . '<br>' .
+//         '<b>Telefon</b>: ' . $telefon . '<br><br>' .
+//         '<b>Nachricht</b>: <br>' .
+//         $nachricht;
+//
+//     $senden = wp_mail($zieladresse, $betreff, $inhalt, $header);
+// }
+
+  //response generation function
+  $response = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+  //function to generate response
+  function my_contact_form_generate_response($type, $message){
+    global $response;
+
+    if($type == "success") $response = '<p style="background-color: green; color: white; text-align: center;
+        padding: 5px 10px; width: 100%; margin: 0 auto; margin-bottom: 20px;">' . $message . '</p>';
+    else $response = '<p style="background-color: red; color: white; text-align: center;
+        padding: 5px 10px; width: 100%; margin: 0 auto; margin-bottom: 20px;">' . $message . '</p>';
+
+  }
+
+  //response messages
+  $missing_content = "Es wurde keine Nachricht eingegeben.";
+  $email_invalid   = "Email-Adresse ungültig.";
+  $message_unsent  = "Die Nachricht konnte nicht gesendet werden. Versuche es erneut.";
+  $message_sent    = "Die Nachricht wurde erfolgreich gesendet.";
+
+  //user posted variables
+  $name = $_POST['message_name'];
+  $email = $_POST['message_email'];
+  $message = $_POST['message_text'];
+  $human = $_POST['message_human'];
+
+  //php mailer variables
+  $to = 'smadback@gmail.com';
+  $subject = 'Kontakt per Webseitenformular';
+  $timestamp = time();
+  $tag = date("d.m.y", $timestamp);
+  $uhrzeit = date("H:i", $timestamp);
+  if (filter_input(INPUT_POST, 'telefon') === "") {
+    $telefon = "Keine Telefonnumer angegeben.";
+  } else {
+    $telefon = filter_input(INPUT_POST, 'telefon');
+  }
+  $headers = array(
+    'From: ' . $name . ' <' . $email . '>',
+    'Content-Type: text/html; charset=UTF-8'
+  );
+
+  $inhalt = 'Sendedatum: ' . $tag . ' - ' . $uhrzeit . '<br><br>' .
+        '<b>Absender</b>: <br>' .
+        '<b>Name</b>: ' . $name . '<br>' .
+        '<b>E-Mail</b>: ' . $email . '<br>' .
+        '<b>Telefon</b>: ' . $telefon . '<br><br>' .
+        '<b>Nachricht</b>: <br>' .
+        $nachricht;
+
+
+  //validate email
+  if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+    my_contact_form_generate_response("error", $email_invalid);
+  else if(empty($name) || empty($message)){
+    my_contact_form_generate_response("error", $missing_content);
+  } else {
+    $sent = wp_mail($to, $subject, strip_tags($inhalt), $headers);
+    if($sent) my_contact_form_generate_response("success", $message_sent); //message sent!
+    else my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
+  }
+}
 ?>
 
 <?php get_header(); ?>
 
 <main>
+
+
   <!--start container-->
   <div class="container">
+
+
 
       <p class="caption">Haben Sie eine Frage? Z&ouml;gern Sie nicht uns eine Nachricht zu schicken. Unser Team
           freut sich Ihnen helfen zu können.</p>
@@ -23,40 +125,15 @@
               <div class="card-content">
                   <div class="row">
                       <div class="col s12 m6">
-                          <form class="contact-form" action="" method="post" accept-charset="utf-8">
-                              <div class="row">
-                                  <div class="input-field col s12">
-                                      <input id="name" name="name" type="text" required>
-                                      <label for="name">Name</label>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                  <div class="input-field col s12">
-                                      <input id="email" name="email" type="email" required>
-                                      <label for="email">Email</label>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                  <div class="input-field col s12">
-                                      <input id="telefon" name="telefon" type="text">
-                                      <label for="telefon">Telefon (optional)</label>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                  <div class="input-field col s12">
-                                      <textarea id="nachricht" name="nachricht" class="materialize-textarea"
-                                                required></textarea>
-                                      <label for="nachricht">Nachricht</label>
-                                  </div>
-                                  <div class="row">
-                                      <div class="input-field col s12">
-                                          <button class="btn garntante waves-effect waves-light right"
-                                                  type="submit" name="action">Absenden
-                                          </button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </form>
+                    <?php echo $response; ?>
+                    <form action="<?php the_permalink(); ?>" method="post">
+                      <p><label for="name">Name: <span style="color:red">*</span> <br><input type="text" name="message_name" value="<?php echo esc_attr($_POST['message_name']); ?>"></label></p>
+                      <p><label for="message_telephone">Telefonnummer: <br><input type="text" name="message_telephone" value="<?php echo esc_attr($_POST['message_telephone']); ?>"></label></p>
+                      <p><label for="message_email">Email: <span style="color:red">*</span> <br><input type="text" name="message_email" value="<?php echo esc_attr($_POST['message_email']); ?>"></label></p>
+                      <p><label for="message_text">Message: <span style="color:red">*</span> <br><textarea type="text" name="message_text" class="materialize-textarea"><?php echo esc_textarea($_POST['message_text']); ?></textarea></label></p>
+                      <input type="hidden" name="submitted" value="1">
+                      <p><input type="submit" class="btn garntante waves-effect waves-light right"></p>
+                    </form>
                       </div>
                       <div class="col s12 m6">
                           <ul class="collapsible collapsible-accordion" data-collapsible="accordion">

@@ -50,6 +50,10 @@ nav .brand-logo {
     color: black;
 }
 
+.unclickable a:hover {
+     cursor: not-allowed;
+}
+
 /**************************
        F O O T E R
 ***************************/
@@ -98,4 +102,36 @@ h2, h3, h4 {
 .caption-title {
     font-size: 2rem;
     font-weight: 300;
+}
+
+.caption {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+/**************************
+  I N P U T F E L D E R
+***************************/
+
+.card-content .row {
+    margin-bottom: 0px;
+}
+
+.input-field input[type=text]:focus+label, .input-field input[type=email]:focus+label {
+    color: #D2615F;
+}
+
+.input-field textarea.materialize-textarea:focus+label {
+    color: #D2615F;
+}
+
+.input-field input[type=text]:focus, .input-field input[type=email]:focus {
+    border-bottom: 1px solid #D2615F;
+    box-shadow: 0 1px 0 0 #D2615F;
+}
+
+.input-field textarea.materialize-textarea:focus {
+    border-bottom: 1px solid #D2615F;
+    box-shadow: 0 1px 0 0 #D2615F;
 }
